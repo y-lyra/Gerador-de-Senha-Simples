@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gerador de Senha</title>
+</head>
+<body>
+
+  <h1>Gerador de Senha</h1>
+
+  <button onclick="gerarSenha()">Gerar Senha</button>
+
+  <h2 id="senha"></h2>
+
+  <script>
+    function gerarSenha() {
+
+      let caracteres =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&";
+
+      let senha = "";
+
+      for(let i = 0; i < 8; i++) {
+        let posicao =
+          Math.floor(Math.random() * caracteres.length);
+
+        senha += caracteres[posicao];
+      }
+
+      document.getElementById("senha").innerText =
+        senha;
+    }
+  </script>
+
+</body>
+</html>
